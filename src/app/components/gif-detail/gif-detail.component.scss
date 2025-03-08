@@ -1,0 +1,42 @@
+mat-toolbar {
+  margin-bottom: 20px;
+
+  button {
+    margin-right: 8px;
+  }
+}
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gif-detail-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  mat-card-content {
+    margin-top: 16px;
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 4px 0;
+    }
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button routerLink="/" aria-label="Back">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span>GIF Details</span>
+</mat-toolbar>
+
+<div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+  
+  <mat-card *ngIf="gif && !isLoading" class="gif-detail-card">
+    <img [src]="gif.images.original.url" [alt]="gif.title">
+    <mat-card-content>
+      <h2>{{ gif.title }}</h2>
+      <p>Author: {{ gif.user?.username || 'Unknown' }}</p>
+      <p>Created: {{ gif.import_datetime }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="copyLink(gif.images.original.url)">Copy Link</button>
+      <button mat-button (click)="downloadGif(gif.images.original.url)">Download</button>
+    </mat-card-actions>
+  </mat-card>

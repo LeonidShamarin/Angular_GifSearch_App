@@ -1,6 +1,21 @@
 <mat-toolbar color="primary">
-  <span>GifSearch App</span>
-  </mat-toolbar>
+  <button mat-icon-button routerLink="/" aria-label="Home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>{{ title }}</span>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="toggleTheme()">
+    <mat-icon>{{ isDarkTheme ? "light_mode" : "dark_mode" }}</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="home-container">
+  <h1>Welcome to GIF Search</h1>
+  <p>
+    Find your favorite GIFs with ease. Start by entering a keyword in the search
+    bar above.
+  </p>
+</div>
+
 <main class="content">
   <router-outlet></router-outlet>
 </main>
